@@ -11,6 +11,7 @@ export class Game {
         this.player = new Player(this);
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
+        this.speed;
         this.resize(window.innerWidth, window.innerHeight);
 
         window.addEventListener('resize', e => {
@@ -46,6 +47,7 @@ export class Game {
         this.height = height;
         this.ratio = this.height / this.baseHeight;
         this.gravity = 0.15 * this.ratio;
+        this.speed = 3;
         this.player.resize();
     }
 }
