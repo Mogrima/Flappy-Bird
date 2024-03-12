@@ -3,8 +3,11 @@ export class Player {
         this.game = game;
         this.x = 0;
         this.y = 0;
-        this.width = 100;
-        this.height = 100;
+        // базовая ширина и высота - размер спрайта
+        this.spriteWidth = 200;
+        this.spriteHeight = 200;
+        this.width;
+        this.height;
     }
 
     draw() {
