@@ -16,7 +16,6 @@ export class Game {
     }
 
     render() {
-        this.ctx.fillStyle = 'red';
         this.player.update();
         this.player.draw();
     }
@@ -24,6 +23,7 @@ export class Game {
     resize(width, height) {
         this.canvas.width = width;
         this.canvas.height = height;
+        this.ctx.fillStyle = 'red';
         this.width = width;
         this.height = height;
     }
