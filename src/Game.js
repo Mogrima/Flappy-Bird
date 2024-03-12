@@ -28,5 +28,7 @@ export class Game {
         this.ctx.fillStyle = 'red';
         this.width = width;
         this.height = height;
+        this.ratio = this.height / this.baseHeight;
+        this.player.resize();
     }
 }
