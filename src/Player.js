@@ -9,6 +9,7 @@ export class Player {
         this.width;
         this.height;
         this.speedY;
+        this.flapSpeed;
     }
 
     draw() {
@@ -31,6 +32,7 @@ export class Player {
         this.height = this.spriteHeight * this.game.ratio;
         this.y = this.game.height * 0.5 - this.height;
         this.speedY = -8 * this.game.ratio;
+        this.flapSpeed = 5 * this.game.ratio;
     }
 
     isTouchingTop() {
