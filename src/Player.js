@@ -8,6 +8,7 @@ export class Player {
         this.spriteHeight = 200;
         this.width;
         this.height;
+        this.speedY = 0;
     }
 
     draw() {
