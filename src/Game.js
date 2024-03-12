@@ -21,6 +21,12 @@ export class Game {
         window.addEventListener('mousedown', e => {
             this.player.flap();
         });
+
+        window.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                this.player.flap();
+            }
+        });
     }
 
     render() {
