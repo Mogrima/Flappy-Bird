@@ -15,7 +15,16 @@ export class Player {
         this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    update() {}
+    update() {
+        this.y += this.speedY;
+        if (!this.isTouchingBottom()) {
+            this.speedY += this.game.gravity;
+        }
+        
+        if (this.isTouchingBottom()) {
+            this.y = this.game.height - this.height
+        }
+    }
 
     resize() {
         this.width = this.spriteWidth * this.game.ratio;
