@@ -27,6 +27,10 @@ export class Game {
                 this.player.flap();
             }
         });
+
+        window.addEventListener('touchstart', e => {
+            this.player.flap();
+        });
     }
 
     render() {
