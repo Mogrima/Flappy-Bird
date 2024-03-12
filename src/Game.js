@@ -7,6 +7,8 @@ export class Game {
         this.width = this.canvas.width;
         this.height = this.canvas.height;
         this.player = new Player(this);
+        this.baseHeight = 720;
+        this.ratio = this.height / this.baseHeight;
         this.resize(window.innerWidth, window.innerHeight);
 
         window.addEventListener('resize', e => {
