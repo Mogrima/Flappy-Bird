@@ -17,6 +17,10 @@ export class Game {
             this.resize(e.currentTarget.innerWidth,
                 e.currentTarget.innerHeight);
         });
+
+        window.addEventListener('mousedown', e => {
+            this.player.flap();
+        });
     }
 
     render() {
