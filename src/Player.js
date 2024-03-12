@@ -8,7 +8,7 @@ export class Player {
         this.spriteHeight = 200;
         this.width;
         this.height;
-        this.speedY = 0;
+        this.speedY;
     }
 
     draw() {
@@ -21,6 +21,7 @@ export class Player {
         this.width = this.spriteWidth * this.game.ratio;
         this.height = this.spriteHeight * this.game.ratio;
         this.y = this.game.height * 0.5 - this.height;
+        this.speedY = -8 * this.game.ratio;
     }
 
     isTouchingBottom() {
