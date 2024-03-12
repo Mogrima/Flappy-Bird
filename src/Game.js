@@ -1,4 +1,5 @@
 import { Player } from "./Player.js";
+import { Background } from "./Background.js";
 
 export class Game {
     constructor(canvas, ctx) {
@@ -8,6 +9,7 @@ export class Game {
         this.height = this.canvas.height;
         this.baseHeight = 720;
         this.ratio = this.height / this.baseHeight;
+        this.background = new Background(this);
         this.player = new Player(this);
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
@@ -35,6 +37,8 @@ export class Game {
     }
 
     render() {
+        this.background.update();
+        this.background.draw();
         this.player.update();
         this.player.draw();
     }
@@ -48,6 +52,7 @@ export class Game {
         this.ratio = this.height / this.baseHeight;
         this.gravity = 0.15 * this.ratio;
         this.speed = 3;
+        this.background.resize();
         this.player.resize();
     }
 }
