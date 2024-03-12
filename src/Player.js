@@ -21,4 +21,8 @@ export class Player {
         this.width = this.spriteWidth * this.game.ratio;
         this.height = this.spriteHeight * this.game.ratio;
     }
+
+    isTouchingBottom() {
+        return this.y >= this.game.height - this.height;
+    }
 }
