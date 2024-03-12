@@ -42,4 +42,10 @@ export class Player {
     isTouchingBottom() {
         return this.y >= this.game.height - this.height;
     }
+
+    flap() {
+        if (!this.isTouchingTop()) {
+            this.speedY = -this.flapSpeed;
+        }
+    }
 }
