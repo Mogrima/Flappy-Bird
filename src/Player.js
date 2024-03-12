@@ -33,6 +33,10 @@ export class Player {
         this.speedY = -8 * this.game.ratio;
     }
 
+    isTouchingTop() {
+        return this.y <= 0;
+    }
+
     isTouchingBottom() {
         return this.y >= this.game.height - this.height;
     }
