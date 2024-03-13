@@ -57,6 +57,10 @@ export class Game {
         this.speed = 3 * this.ratio;
         this.background.resize();
         this.player.resize();
+        this.createObstacles();
+        this.obstacles.forEach(obstacle => {
+            obstacle.resize();
+        });
     }
 
     createObstacles() {
