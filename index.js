@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         game.render();
         lastTime = currentTime;
-        requestAnimationFrame(animate);
+        if (!game.gameOver) requestAnimationFrame(animate);
     }
 
     animate(0);
