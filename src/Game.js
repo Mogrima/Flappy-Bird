@@ -55,7 +55,9 @@ export class Game {
     resize(width, height) {
         this.canvas.width = width;
         this.canvas.height = height;
-        this.ctx.fillStyle = 'red';
+        this.ctx.fillStyle = 'blue';
+        this.ctx.font = '15px Bungee';
+        this.ctx.textAlign = 'right';
         this.width = width;
         this.height = height;
         this.ratio = this.height / this.baseHeight;
