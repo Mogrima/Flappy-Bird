@@ -17,6 +17,12 @@ export class Obstacle {
         if (this.y <= 0 || this.y >= this.game.height - this.scaledHeight) {
             this.speedY *= -1;
         }
+
+        if (this.isOffScreen()) {
+            this.markedForDeletion = true;
+            this.game.obstacles = this.game.obstacles.filter(obstacle => 
+                !obstacle.markedForDeletion);
+        }
     }
 
     draw() {
