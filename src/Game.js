@@ -44,6 +44,10 @@ export class Game {
         this.background.draw();
         this.player.update();
         this.player.draw();
+        this.obstacles.forEach(obstacle => {
+            obstacle.update();
+            obstacle.draw();
+        });
     }
 
     resize(width, height) {
