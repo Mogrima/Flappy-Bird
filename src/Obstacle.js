@@ -37,6 +37,6 @@ export class Obstacle {
     }
 
     isOffScreen() {
-        return this.x < 0;
+        return this.x < -this.scaledWidth;
     }
 }
