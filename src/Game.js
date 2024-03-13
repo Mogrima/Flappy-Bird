@@ -44,6 +44,7 @@ export class Game {
     render() {
         this.background.update();
         this.background.draw();
+        this.drawStatusText();
         this.player.update();
         this.player.draw();
         this.obstacles.forEach(obstacle => {
@@ -71,6 +72,17 @@ export class Game {
         });
         this.score = 0;
         this.gameOver = false;
+    }
+
+    drawStatusText() {
+        this.ctx.save();
+        this.ctx.shadowOffsetX = 2;
+        this.ctx.shadowOffsetY = 2;
+        this.ctx.shadowColor = 'black';
+        this.ctx.shadowBlur = 10;
+        this.ctx.fillStyle = '#08e8de';
+        this.ctx.fillText('Score: ' + this.score, this.width - 10, 40);
+        this.ctx.restore();
     }
 
     createObstacles() {
