@@ -27,4 +27,8 @@ export class Obstacle {
         this.scaledWidth = this.spriteWidth * this.game.ratio;
         this.scaledHeight = this.spriteHeight * this.game.ratio;
     }
+
+    isOffScreen() {
+        return this.x < 0;
+    }
 }
