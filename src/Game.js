@@ -17,6 +17,8 @@ export class Game {
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
         this.speed;
+        this.score;
+        this.gameOver;
         this.resize(window.innerWidth, window.innerHeight);
 
         window.addEventListener('resize', e => {
@@ -65,6 +67,8 @@ export class Game {
         this.obstacles.forEach(obstacle => {
             obstacle.resize();
         });
+        this.score = 0;
+        this.gameOver = false;
     }
 
     createObstacles() {
