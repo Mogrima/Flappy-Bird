@@ -7,6 +7,7 @@ export class Obstacle {
         this.scaledWidth = this.spriteWidth * this.game.ratio;
         this.scaledHeight = this.spriteHeight * this.game.ratio;
         this.y = this.game.height * 0.5 - this.scaledHeight;
+        this.speedY = Math.random() < 0.5 ? -1 * this.game.ratio : 1 * this.game.ratio;
     }
 
     update() {
