@@ -1,5 +1,6 @@
 import { Player } from "./Player.js";
 import { Background } from "./Background.js";
+import { Obstacle } from "./Obstacle.js";
 
 export class Game {
     constructor(canvas, ctx) {
@@ -11,6 +12,8 @@ export class Game {
         this.ratio = this.height / this.baseHeight;
         this.background = new Background(this);
         this.player = new Player(this);
+        this.obstacles = [];
+        this.numberOfObstacles = 10;
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
         this.speed;
@@ -54,5 +57,15 @@ export class Game {
         this.speed = 3 * this.ratio;
         this.background.resize();
         this.player.resize();
+    }
+
+    createObstacles() {
+        this.obstacles = [];
+        const firstX = 100;
+        const obstacleSpacing = 100;
+        for (let i = 0; i < this.numberOfObstacles; i++) {
+            this.obstacles.push(new Obstacle(this,
+                firstX + i * obstacleSpacing));
+        }
     }
 }
