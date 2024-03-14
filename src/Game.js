@@ -43,7 +43,7 @@ export class Game {
     }
 
     render(deltaTime) {
-        this.timer += deltaTime;
+        if (!this.gameOver) this.timer += deltaTime;
         this.background.update();
         this.background.draw();
         this.drawStatusText();
