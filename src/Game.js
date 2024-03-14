@@ -19,6 +19,7 @@ export class Game {
         this.speed;
         this.score;
         this.gameOver;
+        this.timer;
         this.resize(window.innerWidth, window.innerHeight);
 
         window.addEventListener('resize', e => {
@@ -72,6 +73,7 @@ export class Game {
         });
         this.score = 0;
         this.gameOver = false;
+        this.timer = 0;
     }
 
     drawStatusText() {
