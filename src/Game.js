@@ -77,6 +77,10 @@ export class Game {
         this.timer = 0;
     }
 
+    formatTimer() {
+        return (this.timer * 0.001).toFixed(1);
+    }
+
     drawStatusText() {
         this.ctx.save();
         this.ctx.shadowOffsetX = 2;
