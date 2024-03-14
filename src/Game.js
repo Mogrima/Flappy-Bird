@@ -91,6 +91,11 @@ export class Game {
         this.ctx.fillText('Score: ' + this.score, this.width - 10, 40);
         this.ctx.textAlign = 'left';
         this.ctx.fillText('Timer: ' + this.formatTimer(), 10, 40);
+        if (this.gameOver) {
+            this.ctx.textAlign = 'center';
+            this.ctx.font = '30px Bungee';
+            this.ctx.fillText('GAME OVER', this.width * 0.5, this.height * 0.5);
+        }
         this.ctx.restore();
     }
 
