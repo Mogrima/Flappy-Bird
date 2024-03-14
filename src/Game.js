@@ -89,6 +89,8 @@ export class Game {
         this.ctx.shadowBlur = 10;
         this.ctx.fillStyle = '#08e8de';
         this.ctx.fillText('Score: ' + this.score, this.width - 10, 40);
+        this.ctx.textAlign = 'left';
+        this.ctx.fillText('Timer: ' + this.formatTimer(), 10, 40);
         this.ctx.restore();
     }
 
