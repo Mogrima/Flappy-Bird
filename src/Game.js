@@ -110,4 +110,12 @@ export class Game {
                 firstX + i * obstacleSpacing));
         }
     }
+
+    checkCollision(a, b) {
+        const dx = a.collisionX - b.collisionX;
+        const dy = a.collisionY - b.collisionY;
+        const distance = Math.hypot(dx, dy);
+        const sumOfRadius = a.collisionRadius + b.collisionRadius;
+        return distance <= sumOfRadius;
+    }
 }
