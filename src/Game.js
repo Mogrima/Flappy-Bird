@@ -96,9 +96,19 @@ export class Game {
         this.ctx.textAlign = 'left';
         this.ctx.fillText('Timer: ' + this.formatTimer(), 10, 40);
         if (this.gameOver) {
+            if (this.player.collided) {
+                this.message1 = 'Getting rusty?';
+                this.message2 = 'Collision time ' + this.formatTimer() + ' seconds!';
+            } else if (this.obstacles.length <= 0) {
+                this.message1 = 'Nailed it!';
+                this.message2 = 'Can you do it faster than ' + this.formatTimer() + ' seconds?';
+            }
             this.ctx.textAlign = 'center';
             this.ctx.font = '30px Bungee';
-            this.ctx.fillText('GAME OVER', this.width * 0.5, this.height * 0.5);
+            this.ctx.fillText(this.message1, this.width * 0.5, this.height * 0.5 - 40);
+            this.ctx.font = '15px Bungee';
+            this.ctx.fillText(this.message2, this.width * 0.5, this.height * 0.5 - 20);
+            this.ctx.fillText('Press R to try again!', this.width * 0.5, this.height * 0.5);
         }
         this.ctx.restore();
     }
