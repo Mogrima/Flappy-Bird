@@ -20,6 +20,8 @@ export class Game {
         this.score;
         this.gameOver;
         this.timer;
+        this.message1;
+        this.message2;
         this.resize(window.innerWidth, window.innerHeight);
 
         window.addEventListener('resize', e => {
