@@ -13,7 +13,7 @@ export class Game {
         this.background = new Background(this);
         this.player = new Player(this);
         this.obstacles = [];
-        this.numberOfObstacles = 10;
+        this.numberOfObstacles = 1;
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
         this.speed;
@@ -59,6 +59,8 @@ export class Game {
         this.canvas.width = width;
         this.canvas.height = height;
         this.ctx.fillStyle = 'blue';
+        this.ctx.lineWidth = 3;
+        this.ctx.strokeStyle = 'white';
         this.ctx.font = '15px Bungee';
         this.ctx.textAlign = 'right';
         this.width = width;
