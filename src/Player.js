@@ -32,8 +32,10 @@ export class Player {
         this.handleEnergy();
         this.y += this.speedY;
         this.collisionY = this.y + this.height * 0.5;
-        if (!this.isTouchingBottom()) {
+        if (!this.isTouchingBottom() && !this.charging) {
             this.speedY += this.game.gravity;
+        } else {
+            this.speedY = 0;
         }
         
         if (this.isTouchingBottom()) {
