@@ -51,6 +51,13 @@ export class Game {
 
         window.addEventListener('touchstart', e => {
             this.player.flap();
+            this.touchStartX = e.changedTouches[0].pageX;
+        });
+
+        canvas.addEventListener('touchmove', e => {
+            if (e.changedTouches[0].pageX - this.touchStartX > this.swipeDistance) {
+                this.player.startCharge();
+            }
         });
     }
 
