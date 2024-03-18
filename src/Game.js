@@ -39,6 +39,9 @@ export class Game {
             if (e.key === 'Enter' || e.key === ' ') {
                 this.player.flap();
             }
+            if (e.key === 'Shift' || e.key.toLowerCase() === 'c') {
+                this.player.startCharge();
+            }
         });
 
         window.addEventListener('touchstart', e => {
