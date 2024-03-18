@@ -27,6 +27,8 @@ export class Game {
         this.eventTimer = 0;
         this.eventInterval = 150;
         this.eventUpdate = false;
+        this.touchStartX;
+        this.swipeDistance = 50;
         this.resize(window.innerWidth, window.innerHeight);
 
         window.addEventListener('resize', e => {
