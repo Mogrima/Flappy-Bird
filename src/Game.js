@@ -17,6 +17,8 @@ export class Game {
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
         this.speed;
+        this.minSpeed;
+        this.maxSpeed;
         this.score;
         this.gameOver;
         this.timer;
@@ -70,6 +72,8 @@ export class Game {
         this.ratio = this.height / this.baseHeight;
         this.gravity = 0.15 * this.ratio;
         this.speed = 3 * this.ratio;
+        this.minSpeed = this.speed;
+        this.maxSpeed = this.speed * 5;
         this.background.resize();
         this.player.resize();
         this.createObstacles();
