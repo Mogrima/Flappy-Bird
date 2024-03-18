@@ -119,7 +119,8 @@ export class Game {
         }
 
         for (let i = 0; i < this.player.energy; i++) {
-            this.ctx.fillRect(10, this.height - 10 - 2 * i, 15, 2);
+            this.ctx.fillRect(10, this.height - 10 - this.player.barSize * i,
+                this.player.barSize * 5, this.player.barSize);
         }
         this.ctx.restore();
     }
