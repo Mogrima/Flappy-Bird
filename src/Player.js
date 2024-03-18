@@ -17,6 +17,7 @@ export class Player {
         this.energy = 30;
         this.maxEnergy = this.energy * 2;
         this.minEnergy = 15;
+        this.charging;
     }
 
     draw() {
@@ -48,6 +49,16 @@ export class Player {
         this.collisionRadius = this.width * 0.5;
         this.collisionX = this.x + this.width * 0.5;
         this.collided = false;
+    }
+
+    startCharge() {
+        this.charging = true;
+        this.game.speed = this.game.maxSpeed;
+    }
+
+    stopCharge() {
+        this.charging = false;
+        this.game.speed = this.game.minSpeed;
     }
 
     isTouchingTop() {
