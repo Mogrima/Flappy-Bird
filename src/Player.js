@@ -14,6 +14,9 @@ export class Player {
         this.speedY;
         this.flapSpeed;
         this.collided;
+        this.energy = 30;
+        this.maxEnergy = this.energy * 2;
+        this.minEnergy = 15;
     }
 
     draw() {
@@ -24,6 +27,7 @@ export class Player {
     }
 
     update() {
+        this.handleEnergy();
         this.y += this.speedY;
         this.collisionY = this.y + this.height * 0.5;
         if (!this.isTouchingBottom()) {
@@ -57,6 +61,12 @@ export class Player {
     flap() {
         if (!this.isTouchingTop()) {
             this.speedY = -this.flapSpeed;
+        }
+    }
+
+    handleEnergy() {
+        if (this.energy < this.maxEnergy) {
+            this.energy += 0.1;
         }
     }
 }
