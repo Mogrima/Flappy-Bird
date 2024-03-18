@@ -85,7 +85,7 @@ export class Player {
             }
     
             if (this.charging) {
-                this.energy -= 6;
+                this.energy -= 4;
     
                 if (this.energy <= 0) {
                     this.energy = 0;
