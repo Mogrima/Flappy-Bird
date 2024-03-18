@@ -79,16 +79,18 @@ export class Player {
     }
 
     handleEnergy() {
-        if (this.energy < this.maxEnergy) {
-            this.energy += 0.1;
-        }
-
-        if (this.charging) {
-            this.energy -= 1;
-
-            if (this.energy <= 0) {
-                this.energy = 0;
-                this.stopCharge();
+        if (this.game.eventUpdate) {
+            if (this.energy < this.maxEnergy) {
+                this.energy += 1;
+            }
+    
+            if (this.charging) {
+                this.energy -= 6;
+    
+                if (this.energy <= 0) {
+                    this.energy = 0;
+                    this.stopCharge();
+                }
             }
         }
     }
