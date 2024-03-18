@@ -119,7 +119,7 @@ export class Game {
         }
 
         for (let i = 0; i < this.player.energy; i++) {
-            this.ctx.fillRect(10 + i * 6, 60, 5, 15);
+            this.ctx.fillRect(10, this.height - 10 - 2 * i, 15, 2);
         }
         this.ctx.restore();
     }
