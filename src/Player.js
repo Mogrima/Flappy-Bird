@@ -79,5 +79,14 @@ export class Player {
         if (this.energy < this.maxEnergy) {
             this.energy += 0.1;
         }
+
+        if (this.charging) {
+            this.energy -= 1;
+
+            if (this.energy <= 0) {
+                this.energy = 0;
+                this.stopCharge();
+            }
+        }
     }
 }
