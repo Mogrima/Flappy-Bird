@@ -110,6 +110,10 @@ export class Game {
             this.ctx.fillText(this.message2, this.width * 0.5, this.height * 0.5 - 20);
             this.ctx.fillText('Press R to try again!', this.width * 0.5, this.height * 0.5);
         }
+
+        for (let i = 0; i < this.player.energy; i++) {
+            this.ctx.fillRect(10 + i * 6, 60, 5, 15);
+        }
         this.ctx.restore();
     }
 
