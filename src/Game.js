@@ -13,7 +13,7 @@ export class Game {
         this.background = new Background(this);
         this.player = new Player(this);
         this.obstacles = [];
-        this.numberOfObstacles = 1;
+        this.numberOfObstacles = 10;
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
         this.speed;
