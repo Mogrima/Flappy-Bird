@@ -68,6 +68,22 @@ export class Player {
         this.game.speed = this.game.minSpeed;
     }
 
+    wingsIdle() {
+        this.frameY = 0;
+    }
+
+    wingsDown() {
+        if (!this.charging) this.frameY = 1;
+    }
+
+    wingsUp() {
+        if (!this.charging) this.frameY = 2;
+    }
+
+    wingsCharge() {
+        this.frameY = 3;
+    }
+
     isTouchingTop() {
         return this.y <= 0;
     }
