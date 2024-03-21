@@ -1,6 +1,7 @@
 import { Player } from "./Player.js";
 import { Background } from "./Background.js";
 import { Obstacle } from "./Obstacle.js";
+import { AudioControl } from "./Audio.js";
 
 export class Game {
     constructor(canvas, ctx) {
@@ -12,6 +13,7 @@ export class Game {
         this.ratio = this.height / this.baseHeight;
         this.background = new Background(this);
         this.player = new Player(this);
+        this.sound = new AudioControl();
         this.obstacles = [];
         this.numberOfObstacles = 10;
         // сила тяжести в 1px на каждый кадр анимации
