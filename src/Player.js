@@ -108,6 +108,7 @@ export class Player {
         this.stopCharge();
         if (!this.isTouchingTop()) {
             this.speedY = -this.flapSpeed;
+            this.game.sound.play(this.game.sound.flap1);
             this.wingsDown();
         }
     }
