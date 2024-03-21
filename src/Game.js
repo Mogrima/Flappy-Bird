@@ -15,7 +15,7 @@ export class Game {
         this.player = new Player(this);
         this.sound = new AudioControl();
         this.obstacles = [];
-        this.numberOfObstacles = 10;
+        this.numberOfObstacles = 20;
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
         this.speed;
