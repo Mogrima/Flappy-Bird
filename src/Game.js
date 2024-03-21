@@ -26,6 +26,7 @@ export class Game {
         this.timer;
         this.message1;
         this.message2;
+        this.bottomMargin;
         this.eventTimer = 0;
         this.eventInterval = 150;
         this.eventUpdate = false;
@@ -100,6 +101,7 @@ export class Game {
         this.speed = 3 * this.ratio;
         this.minSpeed = this.speed;
         this.maxSpeed = this.speed * 5;
+        this.bottomMargin = Math.floor(50 * this.ratio);
         this.background.resize();
         this.player.resize();
         this.createObstacles();

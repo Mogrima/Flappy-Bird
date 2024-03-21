@@ -45,7 +45,7 @@ export class Player {
         }
         
         if (this.isTouchingBottom()) {
-            this.y = this.game.height - this.height;
+            this.y = this.game.height - this.height - this.game.bottomMargin;
             this.wingsIdle();
         }
     }
@@ -101,7 +101,7 @@ export class Player {
     }
 
     isTouchingBottom() {
-        return this.y >= this.game.height - this.height;
+        return this.y >= this.game.height - this.height - this.game.bottomMargin;
     }
 
     flap() {
