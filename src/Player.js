@@ -108,7 +108,8 @@ export class Player {
         this.stopCharge();
         if (!this.isTouchingTop()) {
             this.speedY = -this.flapSpeed;
-            this.game.sound.play(this.game.sound.flap1);
+            const i = Math.floor(Math.random() * 5);
+            this.game.sound.play(this.game.sound.flapSounds[i]);
             this.wingsDown();
         }
     }
