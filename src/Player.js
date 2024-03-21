@@ -20,10 +20,11 @@ export class Player {
         this.charging;
         this.barSize;
         this.image = document.getElementById('player_fish');
+        this.frameY;
     }
 
     draw() {
-        this.game.ctx.drawImage(this.image, 0, 0,
+        this.game.ctx.drawImage(this.image, 0, this.frameY * this.spriteHeight,
             this.spriteWidth, this.spriteHeight,
              this.x, this.y, this.width, this.height);
         this.game.ctx.beginPath();
@@ -33,6 +34,7 @@ export class Player {
 
     update() {
         this.handleEnergy();
+        if (this.speedY >= 0) this.wingsUp();
         this.y += this.speedY;
         this.collisionY = this.y + this.height * 0.5;
         if (!this.isTouchingBottom() && !this.charging) {
@@ -42,7 +44,8 @@ export class Player {
         }
         
         if (this.isTouchingBottom()) {
-            this.y = this.game.height - this.height
+            this.y = this.game.height - this.height;
+            this.wingsIdle();
         }
     }
 
@@ -56,11 +59,14 @@ export class Player {
         this.collisionX = this.x + this.width * 0.5;
         this.collided = false;
         this.barSize = Math.floor(5 * this.game.ratio);
+        this.frameY = 0;
+        this.charging = false;
     }
 
     startCharge() {
         this.charging = true;
         this.game.speed = this.game.maxSpeed;
+        this.wingsCharge();
     }
 
     stopCharge() {
@@ -96,6 +102,7 @@ export class Player {
         this.stopCharge();
         if (!this.isTouchingTop()) {
             this.speedY = -this.flapSpeed;
+            this.wingsDown();
         }
     }
 

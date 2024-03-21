@@ -40,6 +40,10 @@ export class Game {
             this.player.flap();
         });
 
+        window.addEventListener('mouseup', e => {
+            this.player.wingsUp();
+        });
+
         window.addEventListener('keydown', e => {
             if (e.key === 'Enter' || e.key === ' ') {
                 this.player.flap();
@@ -47,6 +51,10 @@ export class Game {
             if (e.key === 'Shift' || e.key.toLowerCase() === 'c') {
                 this.player.startCharge();
             }
+        });
+
+        window.addEventListener('keyup', e => {
+            this.player.wingsUp();
         });
 
         window.addEventListener('touchstart', e => {
