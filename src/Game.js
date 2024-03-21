@@ -125,6 +125,17 @@ export class Game {
         }
     }
 
+    triggerGameOver() {
+        if (!this.gameOver) {
+            this.gameOver = true;
+            if (this.obstacles.length <= 0) {
+                this.sound.play(this.sound.win);
+            } else {
+                this.sound.play(this.sound.lose);
+            }
+        }
+    }
+
     drawStatusText() {
         this.ctx.save();
         this.ctx.shadowOffsetX = 2;
