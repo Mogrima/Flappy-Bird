@@ -68,6 +68,7 @@ export class Player {
         this.charging = true;
         this.game.speed = this.game.maxSpeed;
         this.wingsCharge();
+        this.game.sound.play(this.game.sound.charge);
     }
 
     stopCharge() {
