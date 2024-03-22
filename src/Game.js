@@ -1,7 +1,7 @@
-import { Player } from "./Player.js";
-import { Background } from "./Background.js";
-import { Obstacle } from "./Obstacle.js";
-import { AudioControl } from "./Audio.js";
+import { Player } from './Player.js';
+import { Background } from './Background.js';
+import { Obstacle } from './Obstacle.js';
+import { AudioControl } from './Audio.js';
 
 export class Game {
     constructor(canvas, ctx) {

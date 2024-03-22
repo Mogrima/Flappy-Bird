@@ -26,7 +26,7 @@ export class Player {
     draw() {
         this.game.ctx.drawImage(this.image, 0, this.frameY * this.spriteHeight,
             this.spriteWidth, this.spriteHeight,
-             this.x, this.y, this.width, this.height);
+            this.x, this.y, this.width, this.height);
         this.game.ctx.beginPath();
         this.game.ctx.arc(this.collisionX + this.collisionRadius * 0.9,
             this.collisionY, this.collisionRadius, 0, Math.PI * 2);
@@ -43,7 +43,7 @@ export class Player {
         } else {
             this.speedY = 0;
         }
-        
+
         if (this.isTouchingBottom()) {
             this.y = this.game.height - this.height - this.game.bottomMargin;
             this.wingsIdle();
@@ -119,10 +119,10 @@ export class Player {
             if (this.energy < this.maxEnergy) {
                 this.energy += 1;
             }
-    
+
             if (this.charging) {
                 this.energy -= 4;
-    
+
                 if (this.energy <= 0) {
                     this.energy = 0;
                     this.stopCharge();

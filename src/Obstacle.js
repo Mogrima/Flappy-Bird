@@ -32,7 +32,7 @@ export class Obstacle {
 
         if (this.isOffScreen()) {
             this.markedForDeletion = true;
-            this.game.obstacles = this.game.obstacles.filter(obstacle => 
+            this.game.obstacles = this.game.obstacles.filter(obstacle =>
                 !obstacle.markedForDeletion);
             this.game.score++;
             if (this.game.obstacles.length <= 0) {
@@ -51,7 +51,7 @@ export class Obstacle {
         this.game.ctx.drawImage(this.image,
             this.frameX * this.spriteWidth, this.frameY * this.spriteHeight,
             this.spriteWidth, this.spriteHeight,
-             this.x, this.y, this.scaledWidth, this.scaledHeight);
+            this.x, this.y, this.scaledWidth, this.scaledHeight);
         this.game.ctx.beginPath();
         this.game.ctx.arc(this.collisionX, this.collisionY, this.collisionRadius, 0, Math.PI * 2);
         this.game.ctx.stroke();
