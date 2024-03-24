@@ -14,7 +14,6 @@ window.addEventListener('load', function () {
     // animation loop
     function animate(currentTime) {
         const deltaTime = currentTime - lastTime;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
         game.render(deltaTime);
         lastTime = currentTime;
         // if (!game.gameOver) requestAnimationFrame(animate);
