@@ -46,7 +46,9 @@ export class Game {
         });
 
         window.addEventListener('mouseup', e => {
-            this.player.wingsUp();
+            setTimeout(() => {
+                this.player.wingsUp();
+            }, 50);
         });
 
         window.addEventListener('keydown', e => {
