@@ -94,7 +94,6 @@ export class Game {
         this.ctx.fillStyle = 'blue';
         this.ctx.lineWidth = 3;
         this.ctx.strokeStyle = 'white';
-        this.ctx.font = '15px Bungee';
         this.ctx.textAlign = 'right';
         this.width = width;
         this.height = height;
@@ -106,6 +105,7 @@ export class Game {
         this.bottomMargin = Math.floor(50 * this.ratio);
         this.smallFont = Math.ceil(20 * this.ratio);
         this.largeFont = Math.ceil(45 * this.ratio);
+        this.ctx.font = this.smallFont + 'px Bungee';
         this.background.resize();
         this.player.resize();
         this.createObstacles();
@@ -153,9 +153,9 @@ export class Game {
         this.ctx.shadowColor = 'black';
         this.ctx.shadowBlur = 10;
         this.ctx.fillStyle = '#08e8de';
-        this.ctx.fillText('Score: ' + this.score, this.width - 10, 40);
+        this.ctx.fillText('Score: ' + this.score, this.width - this.smallFont, this.largeFont);
         this.ctx.textAlign = 'left';
-        this.ctx.fillText('Timer: ' + this.formatTimer(), 10, 40);
+        this.ctx.fillText('Timer: ' + this.formatTimer(), this.smallFont, this.largeFont);
         if (this.gameOver) {
             this.ctx.textAlign = 'center';
             this.ctx.font = this.largeFont + 'px Bungee';
