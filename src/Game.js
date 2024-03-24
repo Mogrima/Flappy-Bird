@@ -62,7 +62,7 @@ export class Game {
             this.player.wingsUp();
         });
 
-        window.addEventListener('touchstart', e => {
+        canvas.addEventListener('touchstart', e => {
             this.player.flap();
             this.touchStartX = e.changedTouches[0].pageX;
         });
