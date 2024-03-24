@@ -28,8 +28,8 @@ export class Player {
             this.spriteWidth, this.spriteHeight,
             this.x, this.y, this.width, this.height);
         this.game.ctx.beginPath();
-        this.game.ctx.arc(this.collisionX + this.collisionRadius * 0.9,
-            this.collisionY, this.collisionRadius, 0, Math.PI * 2);
+        this.game.ctx.arc(this.collisionX, this.collisionY,
+            this.collisionRadius, 0, Math.PI * 2);
         this.game.ctx.stroke();
     }
 
@@ -57,7 +57,7 @@ export class Player {
         this.speedY = -8 * this.game.ratio;
         this.flapSpeed = 5 * this.game.ratio;
         this.collisionRadius = 40 * this.game.ratio;
-        this.collisionX = this.x + this.width * 0.5;
+        this.collisionX = this.x + this.width * 0.7;
         this.collided = false;
         this.barSize = Math.floor(5 * this.game.ratio);
         this.frameY = 0;
