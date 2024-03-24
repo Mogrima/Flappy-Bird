@@ -26,6 +26,8 @@ export class Game {
         this.timer;
         this.message1;
         this.message2;
+        this.smallFont;
+        this.largeFont;
         this.bottomMargin;
         this.eventTimer = 0;
         this.eventInterval = 150;
@@ -102,6 +104,8 @@ export class Game {
         this.minSpeed = this.speed;
         this.maxSpeed = this.speed * 5;
         this.bottomMargin = Math.floor(50 * this.ratio);
+        this.smallFont = Math.ceil(20 * this.ratio);
+        this.largeFont = Math.ceil(45 * this.ratio);
         this.background.resize();
         this.player.resize();
         this.createObstacles();
@@ -154,10 +158,12 @@ export class Game {
         this.ctx.fillText('Timer: ' + this.formatTimer(), 10, 40);
         if (this.gameOver) {
             this.ctx.textAlign = 'center';
-            this.ctx.font = '30px Bungee';
-            this.ctx.fillText(this.message1, this.width * 0.5, this.height * 0.5 - 40);
-            this.ctx.font = '15px Bungee';
-            this.ctx.fillText(this.message2, this.width * 0.5, this.height * 0.5 - 20);
+            this.ctx.font = this.largeFont + 'px Bungee';
+            this.ctx.fillText(this.message1, this.width * 0.5,
+                this.height * 0.5 - this.largeFont, this.width);
+            this.ctx.font = this.smallFont + 'px Bungee';
+            this.ctx.fillText(this.message2, this.width * 0.5,
+                this.height * 0.5 - this.smallFont, this.width);
             this.ctx.fillText('Press R to try again!', this.width * 0.5, this.height * 0.5);
         }
 
