@@ -16,6 +16,7 @@ export class Game {
         this.sound = new AudioControl();
         this.obstacles = [];
         this.numberOfObstacles = 20;
+        this.particles = new Set();
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
         this.speed;
@@ -113,6 +114,10 @@ export class Game {
             obstacle.update();
             obstacle.draw();
         });
+        this.particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
     }
 
     resize(width, height) {
@@ -139,6 +144,7 @@ export class Game {
         this.obstacles.forEach(obstacle => {
             obstacle.resize();
         });
+        this.particles.clear();
         this.score = 0;
         this.gameOver = false;
         this.timer = 0;
