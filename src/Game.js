@@ -153,6 +153,7 @@ export class Game {
     toggleFullScreen() {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
+            screen.orientation.lock("landscape-primary");
         } else if (document.exitFullscreen) {
             document.exitFullscreen();
         }
