@@ -35,6 +35,8 @@ export class Game {
         this.eventUpdate = false;
         this.touchStartX;
         this.swipeDistance = 50;
+        this.ctx.textAlign = 'right';
+        this.ctx.font = this.smallFont + 'px Bungee';
         this.resize(window.innerWidth, window.innerHeight);
         this.sound.mainSound();
 
