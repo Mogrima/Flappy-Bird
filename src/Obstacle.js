@@ -31,9 +31,7 @@ export class Obstacle {
         }
 
         if (this.isOffScreen()) {
-            this.markedForDeletion = true;
-            this.game.obstacles = this.game.obstacles.filter(obstacle =>
-                !obstacle.markedForDeletion);
+            this.remove();
             if (!this.game.gameOver) this.game.score++;
             if (this.game.obstacles.length <= 0) {
                 this.game.triggerGameOver();
@@ -65,5 +63,11 @@ export class Obstacle {
 
     isOffScreen() {
         return this.x < -this.scaledWidth || this.y > this.game.height;
+    }
+
+    remove() {
+        this.markedForDeletion = true;
+        this.game.obstacles = this.game.obstacles.filter(obstacle =>
+                !obstacle.markedForDeletion);
     }
 }
