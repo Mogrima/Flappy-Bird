@@ -61,6 +61,7 @@ export class Player {
         this.collided = false;
         this.barSize = Math.floor(5 * this.game.ratio);
         this.frameY = 0;
+        this.energy = 30;
         this.charging = false;
     }
 
