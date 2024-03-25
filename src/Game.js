@@ -25,8 +25,8 @@ export class Game {
         this.score = 0;
         this.gameOver = true;
         this.timer = 0;
-        this.message1;
-        this.message2;
+        this.message1 = 'Flappy Bird!';
+        this.message2 = '';
         this.smallFont = Math.ceil(20 * this.ratio);
         this.largeFont = Math.ceil(45 * this.ratio);
         this.bottomMargin;
