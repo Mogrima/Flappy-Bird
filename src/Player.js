@@ -21,6 +21,7 @@ export class Player {
         this.barSize;
         this.image = document.getElementById('player_fish');
         this.frameY;
+        this.numberOfParticles = 10;
     }
 
     draw() {
