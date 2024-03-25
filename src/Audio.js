@@ -10,10 +10,18 @@ export class AudioControl {
             this.flap3, this.flap4, this.flap5];
         this.lose = document.getElementById('lose');
         this.win = document.getElementById('win');
+        this.mainTheme = document.getElementById('main');
     }
 
     play(sound) {
         sound.currentTime = 0;
         sound.play();
+    }
+
+    mainSound() {
+        this.mainTheme.currentTime = 0;
+        this.mainTheme.loop = true;
+        this.mainTheme.volume = 0.3;
+        this.mainTheme.play();
     }
 }
