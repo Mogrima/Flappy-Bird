@@ -19,12 +19,12 @@ export class Game {
         this.particles = new Set();
         // сила тяжести в 1px на каждый кадр анимации
         this.gravity;
-        this.speed;
+        this.speed = 0;
         this.minSpeed;
         this.maxSpeed;
-        this.score;
-        this.gameOver;
-        this.timer;
+        this.score = 0;
+        this.gameOver = true;
+        this.timer = 0;
         this.message1;
         this.message2;
         this.smallFont;
