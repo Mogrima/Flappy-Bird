@@ -42,6 +42,12 @@ export class Game {
             this.resize(window.innerWidth, window.innerHeight);
         });
 
+        this.fullScreenButton = document.getElementById('fullScreenButton');
+        this.fullScreenButton.addEventListener('click', e => {
+            this.toggleFullScreen();
+            this.fullScreenButton.blur();
+        });
+
         window.addEventListener('resize', e => {
             this.resize(e.currentTarget.innerWidth,
                 e.currentTarget.innerHeight);
@@ -69,7 +75,9 @@ export class Game {
         window.addEventListener('keyup', e => {
             if (e.key.toLowerCase() === 'r') {
                 this.resize(window.innerWidth, window.innerHeight);
-            } 
+            } else if (e.key.toLowerCase() === 'f') {
+                this.toggleFullScreen();
+            }
             if (e.key === 'Enter' || e.key === ' ') {
                 this.player.wingsUp();
             }
@@ -133,6 +141,14 @@ export class Game {
         this.score = 0;
         this.gameOver = false;
         this.timer = 0;
+    }
+
+    toggleFullScreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
     }
 
     formatTimer() {
