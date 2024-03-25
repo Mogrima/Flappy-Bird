@@ -159,7 +159,7 @@ export class Game {
         this.ctx.shadowOffsetY = 2;
         this.ctx.shadowColor = 'black';
         this.ctx.shadowBlur = 10;
-        this.ctx.fillStyle = '#08e8de';
+        this.ctx.fillStyle = '#fde910';
         this.ctx.fillText('Score: ' + this.score, this.width - this.smallFont, this.largeFont);
         this.ctx.textAlign = 'left';
         this.ctx.fillText('Timer: ' + this.formatTimer(), this.smallFont, this.largeFont);
