@@ -36,6 +36,7 @@ export class Game {
         this.touchStartX;
         this.swipeDistance = 50;
         this.resize(window.innerWidth, window.innerHeight);
+        this.sound.mainSound();
 
         
         this.resetButton = document.getElementById('resetButton');
