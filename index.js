@@ -5,8 +5,8 @@ window.addEventListener('load', function () {
     // canvas setup
     const canvas = this.document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-    canvas.width = 720;
-    canvas.height = 720;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     const game = new Game(canvas, ctx);
     let lastTime = 0;
