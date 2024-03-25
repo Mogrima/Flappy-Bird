@@ -1,4 +1,5 @@
 import { Particle } from "./Partical.js";
+import { Explosion } from "./Explosion.js";
 
 export class Obstacle {
     constructor(game, x) {
@@ -43,6 +44,8 @@ export class Obstacle {
         if (this.game.checkCollision(this, this.game.player)) {
             this.game.player.collided = true;
             this.remove();
+            this.game.particles.add(new Explosion(this.game,
+                this.x + this.scaledWidth * 0.5, this.y + this.scaledHeight * 0.5));
             for (let i = 0; i < this.game.player.numberOfParticles; i++) {
                 this.game.particles.add(new Particle(this.game,
                     this.game.player.x + this.game.player.width * 0.5,
