@@ -40,6 +40,7 @@ export class Game {
         this.resetButton = document.getElementById('resetButton');
         this.resetButton.addEventListener('click', e => {
             this.resize(window.innerWidth, window.innerHeight);
+            this.resetButton.blur();
         });
 
         this.fullScreenButton = document.getElementById('fullScreenButton');
