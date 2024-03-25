@@ -27,8 +27,8 @@ export class Game {
         this.timer = 0;
         this.message1;
         this.message2;
-        this.smallFont;
-        this.largeFont;
+        this.smallFont = Math.ceil(20 * this.ratio);
+        this.largeFont = Math.ceil(45 * this.ratio);
         this.bottomMargin;
         this.eventTimer = 0;
         this.eventInterval = 150;
