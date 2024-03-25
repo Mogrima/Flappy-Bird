@@ -25,9 +25,11 @@ export class Player {
     }
 
     draw() {
-        this.game.ctx.drawImage(this.image, 0, this.frameY * this.spriteHeight,
-            this.spriteWidth, this.spriteHeight,
-            this.x, this.y, this.width, this.height);
+        if (!this.collided) {
+            this.game.ctx.drawImage(this.image, 0, this.frameY * this.spriteHeight,
+                this.spriteWidth, this.spriteHeight,
+                this.x, this.y, this.width, this.height);
+        }
         this.game.ctx.beginPath();
         this.game.ctx.arc(this.collisionX, this.collisionY,
             this.collisionRadius, 0, Math.PI * 2);
@@ -35,19 +37,21 @@ export class Player {
     }
 
     update() {
-        this.handleEnergy();
-        if (this.speedY >= 0) this.wingsUp();
-        this.y += this.speedY;
-        this.collisionY = this.y + this.height * 0.5;
-        if (!this.isTouchingBottom() && !this.charging) {
-            this.speedY += this.game.gravity;
-        } else {
-            this.speedY = 0;
-        }
-
-        if (this.isTouchingBottom()) {
-            this.y = this.game.height - this.height - this.game.bottomMargin;
-            this.wingsIdle();
+        if (!this.collided) {
+            this.handleEnergy();
+            if (this.speedY >= 0) this.wingsUp();
+            this.y += this.speedY;
+            this.collisionY = this.y + this.height * 0.5;
+            if (!this.isTouchingBottom() && !this.charging) {
+                this.speedY += this.game.gravity;
+            } else {
+                this.speedY = 0;
+            }
+    
+            if (this.isTouchingBottom()) {
+                this.y = this.game.height - this.height - this.game.bottomMargin;
+                this.wingsIdle();
+            }
         }
     }
 
@@ -67,7 +71,8 @@ export class Player {
     }
 
     startCharge() {
-        if (this.energy >= this.minEnergy && !this.charging) {
+        if (this.energy >= this.minEnergy
+            && !this.charging && !this.collided) {
             this.charging = true;
             this.game.speed = this.game.maxSpeed;
             this.wingsCharge();
