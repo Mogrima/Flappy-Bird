@@ -174,6 +174,7 @@ export class Game {
             this.ctx.fillText('Press R to try again!', this.width * 0.5, this.height * 0.5);
         }
 
+        this.ctx.fillStyle = '#08e8de';
         if (this.player.energy <= this.player.minEnergy) {
             this.ctx.fillStyle = '#f80000';
         }
