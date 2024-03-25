@@ -1,3 +1,5 @@
+import { Particle } from "./Partical.js";
+
 export class Obstacle {
     constructor(game, x) {
         this.game = game;
@@ -40,6 +42,12 @@ export class Obstacle {
 
         if (this.game.checkCollision(this, this.game.player)) {
             this.game.player.collided = true;
+            this.remove();
+            for (let i = 0; i < this.game.player.numberOfParticles; i++) {
+                this.game.particles.add(new Particle(this.game,
+                    this.game.player.x + this.game.player.width * 0.5,
+                    this.game.player.y + this.game.player.height * 0.5));
+            }
             this.game.player.stopCharge();
             this.game.triggerGameOver();
         }
