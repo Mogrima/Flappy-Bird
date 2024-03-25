@@ -36,6 +36,12 @@ export class Game {
         this.swipeDistance = 50;
         this.resize(window.innerWidth, window.innerHeight);
 
+        
+        this.resetButton = document.getElementById('resetButton');
+        this.resetButton.addEventListener('click', e => {
+            this.resize(window.innerWidth, window.innerHeight);
+        });
+
         window.addEventListener('resize', e => {
             this.resize(e.currentTarget.innerWidth,
                 e.currentTarget.innerHeight);
@@ -61,7 +67,12 @@ export class Game {
         });
 
         window.addEventListener('keyup', e => {
-            this.player.wingsUp();
+            if (e.key.toLowerCase() === 'r') {
+                this.resize(window.innerWidth, window.innerHeight);
+            } 
+            if (e.key === 'Enter' || e.key === ' ') {
+                this.player.wingsUp();
+            }
         });
 
         canvas.addEventListener('touchstart', e => {
