@@ -179,7 +179,7 @@ export class Game {
             this.ctx.fillStyle = '#f80000';
         }
         if (this.player.energy >= this.player.maxEnergy) {
-            this.ctx.fillStyle = '#0047ab';
+            this.ctx.fillStyle = '#35c0f8';
         }
         for (let i = 0; i < this.player.energy; i++) {
             this.ctx.fillRect(10, this.height - 10 - this.player.barSize * i,
