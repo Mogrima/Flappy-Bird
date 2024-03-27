@@ -15,7 +15,7 @@ export class Explosion {
         this.x -= this.game.speed;
         if (this.game.eventUpdate) {
             this.frameX++;
-        } 
+        }
         if (this.frameX > this.maxFrame) this.remove();
     }
     draw() {

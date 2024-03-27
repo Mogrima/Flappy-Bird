@@ -1,5 +1,5 @@
-import { Particle } from "./Partical.js";
-import { Explosion } from "./Explosion.js";
+import { Particle } from './Partical.js';
+import { Explosion } from './Explosion.js';
 
 export class Obstacle {
     constructor(game, x) {
@@ -61,11 +61,11 @@ export class Obstacle {
             this.frameX * this.spriteWidth, this.frameY * this.spriteHeight,
             this.spriteWidth, this.spriteHeight,
             this.x, this.y, this.scaledWidth, this.scaledHeight);
-            if (this.game.debug) {
-                this.game.ctx.beginPath();
-                this.game.ctx.arc(this.collisionX, this.collisionY, this.collisionRadius, 0, Math.PI * 2);
-                this.game.ctx.stroke();
-            }
+        if (this.game.debug) {
+            this.game.ctx.beginPath();
+            this.game.ctx.arc(this.collisionX, this.collisionY, this.collisionRadius, 0, Math.PI * 2);
+            this.game.ctx.stroke();
+        }
     }
 
     resize() {
@@ -81,6 +81,6 @@ export class Obstacle {
     remove() {
         this.markedForDeletion = true;
         this.game.obstacles = this.game.obstacles.filter(obstacle =>
-                !obstacle.markedForDeletion);
+            !obstacle.markedForDeletion);
     }
 }

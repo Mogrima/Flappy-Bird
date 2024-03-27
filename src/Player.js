@@ -49,7 +49,7 @@ export class Player {
             } else {
                 this.speedY = 0;
             }
-    
+
             if (this.isTouchingBottom()) {
                 this.y = this.game.height - this.height - this.game.bottomMargin;
                 this.wingsIdle();

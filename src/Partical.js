@@ -33,7 +33,7 @@ export class Particle {
         this.x -= this.speedX + this.game.speed;
         this.y += this.speedY;
         if (this.y > this.game.height + this.size || this.x < 0 - this.size) {
-            this.remove()
+            this.remove();
         }
         if (this.y > this.game.height - this.size - this.bottomBounceBoundary && this.bounced < 4) {
             this.bounced++;

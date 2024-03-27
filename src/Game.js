@@ -41,7 +41,7 @@ export class Game {
         this.debug = false;
         this.sound.mainSound();
 
-        
+
         this.resetButton = document.getElementById('resetButton');
         this.resetButton.addEventListener('click', e => {
             this.resize(window.innerWidth, window.innerHeight);
@@ -157,7 +157,7 @@ export class Game {
     toggleFullScreen() {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
-            screen.orientation.lock("landscape-primary");
+            screen.orientation.lock('landscape-primary');
         } else if (document.exitFullscreen) {
             document.exitFullscreen();
         }
