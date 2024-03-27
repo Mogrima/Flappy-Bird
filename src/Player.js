@@ -72,7 +72,8 @@ export class Player {
 
     startCharge() {
         if (this.energy >= this.minEnergy
-            && !this.charging && !this.collided) {
+            && !this.charging && !this.collided
+            && !this.game.gameOver) {
             this.charging = true;
             this.game.speed = this.game.maxSpeed;
             this.wingsCharge();
@@ -84,7 +85,7 @@ export class Player {
 
     stopCharge() {
         this.charging = false;
-        this.game.speed = this.game.minSpeed;
+        if (!this.game.gameOver) this.game.speed = this.game.minSpeed;
     }
 
     wingsIdle() {
