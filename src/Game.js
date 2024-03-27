@@ -27,6 +27,7 @@ export class Game {
         this.timer = 0;
         this.message1 = 'Flappy Bird!';
         this.message2 = '';
+        this.message3 = 'Press "ENTER" or "R" to start!';
         this.smallFont = Math.ceil(20 * this.ratio);
         this.largeFont = Math.ceil(45 * this.ratio);
         this.bottomMargin;
@@ -180,6 +181,7 @@ export class Game {
     triggerGameOver() {
         if (!this.gameOver) {
             this.gameOver = true;
+            this.message3 = 'Press R to try again!';
             if (this.obstacles.length <= 0) {
                 this.sound.play(this.sound.win);
                 this.message1 = 'Nailed it!';
@@ -210,7 +212,7 @@ export class Game {
             this.ctx.font = this.smallFont + 'px Bungee';
             this.ctx.fillText(this.message2, this.width * 0.5,
                 this.height * 0.5 - this.smallFont, this.width);
-            this.ctx.fillText('Press R to try again!', this.width * 0.5, this.height * 0.5);
+            this.ctx.fillText(this.message3, this.width * 0.5, this.height * 0.5);
         }
 
         this.ctx.fillStyle = '#08e8de';
