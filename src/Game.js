@@ -38,6 +38,7 @@ export class Game {
         this.background.resize();
         this.ctx.textAlign = 'right';
         this.ctx.font = this.smallFont + 'px Bungee';
+        this.debug = false;
         this.sound.mainSound();
 
         
