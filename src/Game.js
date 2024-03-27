@@ -70,7 +70,7 @@ export class Game {
         });
 
         window.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            if (e.key === ' ') {
                 this.player.flap();
             }
             if (e.key === 'Shift' || e.key.toLowerCase() === 'c') {
@@ -79,7 +79,7 @@ export class Game {
         });
 
         window.addEventListener('keyup', e => {
-            if (e.key.toLowerCase() === 'r') {
+            if (e.key.toLowerCase() === 'r' || e.key === 'Enter') {
                 this.resize(window.innerWidth, window.innerHeight);
             } else if (e.key.toLowerCase() === 'f') {
                 this.toggleFullScreen();
