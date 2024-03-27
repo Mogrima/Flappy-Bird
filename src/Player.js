@@ -114,7 +114,7 @@ export class Player {
 
     flap() {
         this.stopCharge();
-        if (!this.isTouchingTop()) {
+        if (!this.isTouchingTop() && !this.game.gameOver) {
             this.speedY = -this.flapSpeed;
             const i = Math.floor(Math.random() * 5);
             this.game.sound.play(this.game.sound.flapSounds[i]);
