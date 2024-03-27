@@ -24,6 +24,7 @@ export class Game {
         this.maxSpeed;
         this.score = 0;
         this.gameOver = true;
+        this.start = false;
         this.timer = 0;
         this.message1 = 'Flappy Bird!';
         this.message2 = '';
@@ -40,7 +41,6 @@ export class Game {
         this.ctx.textAlign = 'right';
         this.ctx.font = this.smallFont + 'px Bungee';
         this.debug = false;
-        this.sound.mainSound();
 
 
         this.resetButton = document.getElementById('resetButton');
@@ -153,6 +153,10 @@ export class Game {
         this.score = 0;
         this.gameOver = false;
         this.timer = 0;
+        if (!this.start) {
+            this.start = true;
+            this.sound.mainSound();
+        }
     }
 
     toggleFullScreen() {
